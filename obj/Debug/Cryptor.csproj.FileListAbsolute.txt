@@ -1,7 +1,0 @@
-D:\Persional\Projects\Public\Cryptor\bin\Debug\Cryptor.exe.config
-D:\Persional\Projects\Public\Cryptor\obj\Debug\Cryptor.csprojResolveAssemblyReference.cache
-D:\Persional\Projects\Public\Cryptor\bin\Debug\Cryptor.exe
-D:\Persional\Projects\Public\Cryptor\bin\Debug\Cryptor.pdb
-D:\Persional\Projects\Public\Cryptor\bin\Debug\Colorful.Console.dll
-D:\Persional\Projects\Public\Cryptor\obj\Debug\Cryptor.exe
-D:\Persional\Projects\Public\Cryptor\obj\Debug\Cryptor.pdb
