@@ -7,6 +7,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Runtime.Serialization;
+using Console = Colorful.Console;
 
 namespace Cryptor
 {
@@ -151,32 +154,61 @@ namespace Cryptor
 			  "___________________________________________________________________"
 			};
 
+                                                           
+                                                           
 
-			
-			WriteColoredLines(U, s + 0, 2, ConsoleColor.DarkGray);
-			WriteColoredLines(C, s + 1, r, ConsoleColor.Red);
-			WriteColoredLines(R, s + 10, r, ConsoleColor.Green);
-			WriteColoredLines(Y, s + 19, r, ConsoleColor.Gray);
-			WriteColoredLines(P, s + 28, r, ConsoleColor.Magenta);
-			WriteColoredLines(T, s + 37, r, ConsoleColor.Cyan);
-			WriteColoredLines(O, s + 47, r, ConsoleColor.Blue);
-			WriteColoredLines(R, s + 58, r, ConsoleColor.Yellow);
-			WriteColoredLines(U, s + 0, 9, ConsoleColor.DarkGray);
 
-				
-		}
-    
-        private static void WriteColoredLines(string[] lines, int start, int end, ConsoleColor color)
-		{
-			Console.ForegroundColor = color;
-			for (int row = 0; row < lines.Length; row++)
-			{
-				Console.SetCursorPosition(start, end + row);
-				Console.Write(lines[row]);
-			}
-		}
-    
-    
+            List<char> @chars = new List<char>()
+            {
+                '\t',' ',
+                '.','.','.','.','.','.',' ','.','.','.',
+                '.','.','.',' ',' ','.','.',' ',' ',' ',
+                ' ','.','.',' ','.','.','.','.','.','.',
+                ' ',' ','.','.','.','.','.','.','.','.',
+                ' ',' ','.','.','.','.','.','.',' ',' ',
+                '.','.','.','.','.','.',' ',' ','\n','\t','.',
+                '.',' ',' ',' ',' ',' ',' ','.','.',' ',
+                ' ',' ','.','.',' ',' ','.','.',' ',' ',
+                '.','.',' ',' ','.','.',' ',' ',' ','.',
+                '.',' ',' ',' ',' ','.','.',' ',' ',' ',
+                ' ','.','.',' ',' ',' ',' ','.','.',' ',
+                '.','.',' ',' ',' ','.','.',' ','\n','\t','.',
+                '.',' ',' ',' ',' ',' ',' ','.','.','.',
+                '.','.','.',' ',' ',' ',' ','.','.','.',
+                '.',' ',' ',' ','.','.','.','.','.','.',
+                ' ',' ',' ',' ',' ','.','.',' ',' ',' ',
+                ' ','.','.',' ',' ',' ',' ','.','.',' ',
+                '.','.','.','.','.','.',' ',' ','\n','\t','.',
+                '.',' ',' ',' ',' ',' ',' ','.','.',' ',
+                ' ',' ','.','.',' ',' ',' ',' ','.','.',
+                ' ',' ',' ',' ','.','.',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' ','.','.',' ',' ',' ',
+                ' ','.','.',' ',' ',' ',' ','.','.',' ',
+                '.','.',' ',' ',' ','.','.',' ','\n','\t',' ',
+                '.','.','.','.','.','.',' ','.','.',' ',
+                ' ',' ','.','.',' ',' ',' ',' ','.','.',
+                ' ',' ',' ',' ','.','.',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' ','.','.',' ',' ',' ',
+                ' ',' ','.','.','.','.','.','.',' ',' ',
+                '.','.',' ',' ',' ','.','.',' ',
+            };
+            Random r = new Random();
+            int rInt = r.Next(128, 255);
+            for (var i = 0; i < chars.Count; i++)
+            {
+                if(chars[i] == '.')
+                    chars[i] = (char)rInt;
+                
+            }
+            //Console.WriteWithGradient(chars, Color.Yellow, Color.Fuchsia, 14);
+            Console.WriteWithGradient(chars, Color.Yellow, Color.Magenta, 14);
+            
+            //Console.WriteWithGradient(chars, ColorTranslator.FromHtml("#ee9ca7"), ColorTranslator.FromHtml("#ffdde1"), 14);
+
+        }
+
+
+
         public static void About()
 		{
 
@@ -186,7 +218,6 @@ namespace Cryptor
 			Console.WriteLine("");
 			Console.WriteLine("");
 			Console.WriteLine("");
-			Console.ForegroundColor = ConsoleColor.Magenta;
 			Console.WriteLine(@"			
 			╔═════════════╦═══════════════════════════════════╗
 			║ Version     ║ v" + Program.VERSION + @"                              ║
