@@ -200,6 +200,7 @@ namespace Cryptor
                     chars[i] = (char)rInt;
                 
             }
+
             //Console.WriteWithGradient(chars, Color.Yellow, Color.Fuchsia, 14);
             Console.WriteWithGradient(chars, Color.Yellow, Color.Magenta, 14);
             
